@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 custom-login">
+            <form (ngSubmit)="onAdminLogin()">
+                <label class="form-text">Username</label>
+                <input type="text" name="uname" [(ngModel)]="uname" class="form-control">
+                <br>
+                <label class="form-text">Password</label>
+                <input type="password" name="password" [(ngModel)]="password" class="form-control">
+                <br>
+                <p style="text-align: center">
+                    <button type="submit" class="btn btn-success">Login</button>
+                </p>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+
+</div>

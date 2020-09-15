@@ -1,0 +1,33 @@
+<app-auth></app-auth>
+
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <h1>Join Family</h1>
+    </div>
+    <div class="col-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <form (ngSubmit)="onJoin()">
+        <div class="form-group">
+          <label class="form-text">Family ID : </label>
+          <input
+            type="text"
+            name="familyID"
+            [(ngModel)]="familyID"
+            class="form-control"
+          />
+          <br />
+          <button class="btn btn-primary" type="submit">Join</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+<app-header></app-header>
+<app-footer></app-footer>

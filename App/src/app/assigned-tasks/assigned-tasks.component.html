@@ -1,0 +1,35 @@
+<app-auth></app-auth>
+
+<div class="container">
+  <h2 style="text-align: center">Tasks</h2>
+  <br />
+  <br />
+  <div class="content">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <ul *ngFor="let task of tasks">
+          <li style="list-style: none">
+            <div class="row">
+              <div class="col-2"></div>
+              <div class="col-6">{{ task.name }} is {{ task.status }}</div>
+              <div class="col-2">
+                <button (click)="onView(task._id)" class="btn btn-warning">
+                  view
+                </button>
+              </div>
+              <div class="col-2">
+                <button (click)="onDelete(task._id)" class="btn btn-danger">
+                  remove
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </div>
+</div>
+<app-header></app-header>
+<app-footer></app-footer>

@@ -1,0 +1,29 @@
+<app-auth></app-auth>
+<div class="container">
+  <h2 style="text-align: center">Requests</h2>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div *ngIf="reqData">
+        <ul class="custom-ul" *ngFor="let request of reqData">
+          <li>
+            {{ request.name }} is requested to join the family.<a
+              class="btn btn-info"
+              (click)="onRequestView(request.id)"
+              >View</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="!reqData">
+        <h2>O Requests</h2>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <hr />
+</div>
+<app-header></app-header>
+<app-footer></app-footer>

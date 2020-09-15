@@ -1,0 +1,23 @@
+<app-auth></app-auth>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="notifications" data-toggle="dropdown"
+        aria-haspopup="true" role="button" aria-expanded="false"><span class="badge"><img
+                src="../../assets/images/notification.png" />
+            <div *ngIf=count>
+
+                <sup>
+                    {{count}}
+                </sup>
+            </div>
+        </span></a>
+    <div *ngIf=count>
+
+        <div class="dropdown-menu" aria-labelledby="notifications">
+            <div *ngFor="let i of notificationArray">
+                <a class="dropdown-item" routerLink="">{{i.message}}</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</li>

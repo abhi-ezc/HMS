@@ -1,0 +1,35 @@
+<app-admin-auth></app-admin-auth>
+<div class="container">
+  <h2 style="text-align: center">Tasks</h2>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <ul *ngFor="let task of tasks">
+        <li>
+          Task "{{ task.name }}" for {{ task.primary_person.person_name }}
+          <div
+            *ngIf="
+              task.primary_person.person_name !=
+              task.secondary_person.person_name
+            "
+          >
+            and {{ task.secondary_person.person_name }}
+          </div>
+          <button
+            class="btn btn-warning"
+            style="float: right; color: white"
+            (click)="onTaskView(task)"
+          >
+            View
+          </button>
+        </li>
+        <br />
+      </ul>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+<app-header></app-header>
+<app-footer></app-footer>

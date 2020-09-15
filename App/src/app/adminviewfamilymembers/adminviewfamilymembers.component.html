@@ -1,0 +1,27 @@
+<app-admin-auth></app-admin-auth>
+
+<div class="container">
+  <h2 style="text-align: center">Members</h2>
+  <br />
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <ul *ngFor="let member of members">
+        <li style="color: black; list-style: none">
+          {{ member.name }}
+          <button
+            class="btn btn-primary"
+            style="float: right"
+            (click)="onUserView(member.id)"
+          >
+            view
+          </button>
+        </li>
+        <br />
+      </ul>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+<app-header></app-header>
+<app-footer></app-footer>

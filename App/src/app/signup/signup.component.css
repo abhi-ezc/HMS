@@ -1,0 +1,28 @@
+@media screen and (min-width:768px)
+{
+    .sideDiv{
+    background-size: cover;
+    }
+}
+
+
+.btn-brown{
+    background-color: brown;
+    color:white;
+    opacity: .8;
+    transition: 300ms;
+}
+.btn-brown:hover{
+    opacity: 1;
+    transition: 600ms;
+}
+.sideDiv{
+    background-image: url('../../assets/images/regdiv.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    background-color: white;
+}
+

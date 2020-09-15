@@ -1,0 +1,115 @@
+<app-auth></app-auth>
+<div class="container">
+  <h2 style="text-align: center">Task Assign</h2>
+  <div class="row">
+    <div class="col-3">
+      <div class="jumbotron custom-left-body">
+        <p><b>Tips:</b></p>
+        <ul style="list-style-type: square; font-size: 10px; text-align: left">
+          <li>
+            The Primary Person will be Alerted with in a Minute after You
+            Assigned the Task and The Secondary pPerson will be Alerted
+            Depending on the Priority You Selected.
+          </li>
+          <br />
+          <li>
+            Set Same Person as Primary and Secondary , to Alert the Person
+            Twice.
+          </li>
+          <br />
+          <li>You can Set a Remainder for Yourself by Selecting Your Name.</li>
+          <br />
+          <li>
+            If You Set a Remainder for Yourself, The First Remainder will be
+            Triggered After One Hour from the Assigned Time
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-6">
+      <form [formGroup]="taskAssignForm" (ngSubmit)="onSubmit($event)">
+        <br />
+        <label class="form text">Task Name</label>
+        <input
+          type="text"
+          name="name"
+          formControlName="name"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+        />
+        <div class="invalid-feedback" *ngIf="submitted && f.name.errors">
+          <div *ngIf="f.name.errors.required">Task Name is Required</div>
+        </div>
+        <br />
+        <label class="form text">Description</label>
+        <textarea
+          name="description"
+          formControlName="description"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.description.errors }"
+        >
+        </textarea>
+        <div class="invalid-feedback" *ngIf="submitted && f.description.errors">
+          <div *ngIf="f.description.errors.required">
+            Task Description is Required
+          </div>
+        </div>
+        <br />
+        <label class="form text">Primary Person</label>
+        <select id="pname" name="primary_name" class="form-control">
+          <option *ngFor="let member of members" id="{{ members.id }}">
+            <input type="hidden" value="{{ members.person_id }}" />{{
+              member.person_name
+            }}
+          </option>
+        </select>
+        <br />
+        <label class="form text">Secondary Person</label>
+        <select id="sname" name="secondary_name" class="form-control">
+          <option *ngFor="let member of members" id="{{ members.id }}">
+            <input type="hidden" value="{{ members.person_id }}" />{{
+              member.person_name
+            }}
+          </option>
+        </select>
+        <br />
+        <label class="form text">Priority</label>
+        <select name="priority" class="form-control" id="priority">
+          <option selected id="prior3">Low</option>
+          <option selected id="prior2">Medium</option>
+          <option selected id="prior1">High</option>
+        </select>
+        <br />
+        <p style="text-align: center">
+          <button type="submit" class="btn btn-success">Assign</button>
+        </p>
+      </form>
+    </div>
+    <div class="col-3">
+      <div class="jumbotron custom-right-body">
+        <p><b>Priority:</b></p>
+        <dl>
+          <dt style="font-size: small">Low</dt>
+          <dd style="font-size: x-small">
+            The second alert will be triggered after 2 hour from the first
+            alert.
+          </dd>
+
+          <dt style="font-size: small">Medium</dt>
+          <dd style="font-size: x-small">
+            The second alert will be triggered after 1.5 hours from the first
+            alert.
+          </dd>
+
+          <dt style="font-size: small">High</dt>
+          <dd style="font-size: x-small">
+            The second alert will be triggered after 1 hour from the first
+            alert.
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+<app-header></app-header>
+<app-footer></app-footer>

@@ -1,0 +1,11 @@
+.left{
+    float: left;
+    }
+    
+    .right{
+        float: right;
+    }
+    td{
+        padding: 10px;
+        padding-right: 200px;
+    }

@@ -1,0 +1,123 @@
+<app-admin-auth></app-admin-auth>
+<div class="container">
+  <h2 style="text-align: center">User View</h2>
+  <br />
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="content" *ngIf="user">
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col-4">
+            <label class="custom-label-text">Name</label>
+          </div>
+          <div class="col-4">
+            <label class="custom-label-text">{{ user.name }}</label>
+          </div>
+          <div class="col-2"></div>
+
+          <br />
+        </div>
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col-4">
+            <label class="custom-label-text">Age</label>
+          </div>
+          <div class="col-4">
+            <label class="custom-label-text">{{ user.age }}</label>
+          </div>
+          <div class="col-2"></div>
+
+          <br />
+        </div>
+
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col-4">
+            <label class="custom-label-text">Address</label>
+          </div>
+          <div class="col-4">
+            <label class="custom-label-text">{{ user.address }}</label>
+          </div>
+          <div class="col-2"></div>
+
+          <br />
+        </div>
+
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col-4">
+            <label class="custom-label-text">Gender</label>
+          </div>
+          <div class="col-4">
+            <label class="custom-label-text">{{ user.gender }}</label>
+          </div>
+          <div class="col-2"></div>
+
+          <br />
+        </div>
+
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col-4">
+            <label class="custom-label-text">Age</label>
+          </div>
+          <div class="col-4">
+            <label class="custom-label-text">{{ user.age }}</label>
+          </div>
+          <div class="col-2"></div>
+
+          <br />
+        </div>
+
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col-4">
+            <label class="custom-label-text">Mobile</label>
+          </div>
+          <div class="col-4">
+            <label class="custom-label-text">{{ user.mobile }}</label>
+          </div>
+          <div class="col-2"></div>
+
+          <br />
+        </div>
+
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col-4">
+            <label class="custom-label-text">Email</label>
+          </div>
+          <div class="col-4">
+            <label class="custom-label-text">{{ user.email }}</label>
+          </div>
+          <div class="col-2"></div>
+          <br />
+        </div>
+
+        <div class="row">
+          <div class="col-3"></div>
+          <div class="col-6">
+            <button
+              style="color: white"
+              class="btn btn-warning"
+              (click)="onUpdate(user._id)"
+            >
+              Update
+            </button>
+            &nbsp; &nbsp;
+            <button class="btn btn-danger" (click)="onDelete(user._id)">
+              Delete
+            </button>
+          </div>
+          <div class="col-3"></div>
+        </div>
+        <br />
+        <br />
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+<app-header></app-header>
+<app-footer></app-footer>
